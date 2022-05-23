@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbousbaa <mbousbaa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 01:40:50 by mbousbaa          #+#    #+#             */
-/*   Updated: 2022/05/22 17:33:29 by mbousbaa         ###   ########.fr       */
+/*   Created: 2022/05/21 19:21:46 by mbousbaa          #+#    #+#             */
+/*   Updated: 2022/05/22 02:09:57 by mbousbaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+//#include <stdio.h>
+
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
-	int	res;
+	int	j;
 
-	if (*str == 0)
-		return (1);
 	i = 0;
-	while (str[i] != '\0')
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			res = 1;
-		else
-		{
-			res = 0;
-			break ;
-		}
+		dest[i] = src[j];
+		j++;
 		i++;
 	}
-	return (res);
+	dest[i] = '\0';
+	return (dest);
 }
+
+/*int main()
+{
+	char dest[5] = "dest", src[] = "this is src";
+
+	printf("%s\n", ft_strcat(dest, src));
+	return 0;
+}*/

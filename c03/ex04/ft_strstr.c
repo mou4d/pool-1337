@@ -1,33 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbousbaa <mbousbaa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 01:40:50 by mbousbaa          #+#    #+#             */
-/*   Updated: 2022/05/22 17:33:29 by mbousbaa         ###   ########.fr       */
+/*   Created: 2022/05/22 02:17:44 by mbousbaa          #+#    #+#             */
+/*   Updated: 2022/05/22 15:14:54 by mbousbaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
-{
-	int	i;
-	int	res;
+#include <stdio.h>
 
-	if (*str == 0)
-		return (1);
+char	*ft_strstr(char *str, char *to_find)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	*ptr;
+
 	i = 0;
-	while (str[i] != '\0')
+	while (to_find[i] != 0)
+		i++;
+	j = 0;
+	k = 0;
+	while (str[j] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			res = 1;
+		if (str[j] == to_find[k])
+			k++;
 		else
+			k = 0;
+		if (k == i)
 		{
-			res = 0;
+			ptr = &str[j - (i - 1)];
+			return (ptr);
 			break ;
 		}
-		i++;
+		j++;
 	}
-	return (res);
+	return (0);
+}
+
+int main()
+{
+	char str[] = "This is a long long long long string";
+	char s[] = "xxx";
+	printf("%s", ft_strstr(str, s));
+	return 0;
 }

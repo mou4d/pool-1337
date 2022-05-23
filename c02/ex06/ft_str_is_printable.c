@@ -6,11 +6,9 @@
 /*   By: mbousbaa <mbousbaa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 01:56:56 by mbousbaa          #+#    #+#             */
-/*   Updated: 2022/05/19 02:06:47 by mbousbaa         ###   ########.fr       */
+/*   Updated: 2022/05/22 15:49:26 by mbousbaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 
 int	ft_str_is_printable(char *str)
 {
@@ -33,13 +31,3 @@ int	ft_str_is_printable(char *str)
 	}
 	return (res);
 }
-
-/*
-int main()
-{
-	char str[] = "awerty";
-	str[0] = 27;
-	printf("%d", ft_str_is_printable(str));
-	return 0;
-}
-*/

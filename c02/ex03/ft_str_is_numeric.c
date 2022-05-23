@@ -6,11 +6,9 @@
 /*   By: mbousbaa <mbousbaa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 00:13:51 by mbousbaa          #+#    #+#             */
-/*   Updated: 2022/05/19 01:33:44 by mbousbaa         ###   ########.fr       */
+/*   Updated: 2022/05/22 16:01:58 by mbousbaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 
 int	ft_str_is_numeric(char *str)
 {
@@ -37,12 +35,3 @@ int	ft_str_is_numeric(char *str)
 	}
 	return (res);
 }
-/*
-int main()
-{
-	char str[] = "12345";
-
-	printf("%d ", ft_str_is_numeric(str));
-	return 0;
-}
-*/

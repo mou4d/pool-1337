@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbousbaa <mbousbaa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 01:40:50 by mbousbaa          #+#    #+#             */
-/*   Updated: 2022/05/22 17:33:29 by mbousbaa         ###   ########.fr       */
+/*   Created: 2022/05/19 18:45:39 by mbousbaa          #+#    #+#             */
+/*   Updated: 2022/05/24 00:03:10 by mbousbaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	res;
+	unsigned int	i;
+	unsigned int	src_len;
 
-	if (*str == 0)
-		return (1);
 	i = 0;
-	while (str[i] != '\0')
+	src_len = 0;
+	while (src[src_len] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			res = 1;
-		else
-		{
-			res = 0;
-			break ;
-		}
+		src_len++;
+	}
+	while (i < size - 1)
+	{
+		dest[i] = src[i];
 		i++;
 	}
-	return (res);
+	dest[i] = '\0';
+	return (src_len);
 }

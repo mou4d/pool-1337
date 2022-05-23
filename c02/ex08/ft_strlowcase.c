@@ -6,11 +6,9 @@
 /*   By: mbousbaa <mbousbaa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 02:42:05 by mbousbaa          #+#    #+#             */
-/*   Updated: 2022/05/19 02:47:21 by mbousbaa         ###   ########.fr       */
+/*   Updated: 2022/05/22 15:45:08 by mbousbaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 
 char	*ft_strlowcase(char *str)
 {
@@ -25,11 +23,3 @@ char	*ft_strlowcase(char *str)
 	}
 	return (str);
 }
-/*
-int main()
-{
-	char str[] = "ZbcfefDhxX";
-	printf("%s", ft_strlowcase(str));
-	return 0;
-}
-*/

@@ -1,33 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbousbaa <mbousbaa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 01:40:50 by mbousbaa          #+#    #+#             */
-/*   Updated: 2022/05/22 17:33:29 by mbousbaa         ###   ########.fr       */
+/*   Created: 2022/05/21 14:25:09 by mbousbaa          #+#    #+#             */
+/*   Updated: 2022/05/21 23:24:23 by mbousbaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+#include <unistd.h>
+#include <stdio.h>
+
+void	ft_putstr_non_printable(char *str)
 {
 	int	i;
-	int	res;
+	int j;
+	int r;
+	int de;
+	char hex;
 
-	if (*str == 0)
-		return (1);
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			res = 1;
-		else
+		if (str[i] == '\n')
 		{
-			res = 0;
-			break ;
+			printf("in\n");
+			de = str[i] + '0';
+				r = de % 16;
+				printf("%d\n", r);
+				if (r < 10)
+					hex  = r + 48;
+				else
+					hex= r + 55;
+				printf("%c\n", hex);
+				de = de / 16;
+			
+
+			str[i] = '\\';
 		}
 		i++;
 	}
-	return (res);
+}
+
+int main ()
+{
+	char str[] = "This is \n a test";
+
+	ft_putstr_non_printable(str);
+
+	printf("%s\n", str);
+	return 0;
 }

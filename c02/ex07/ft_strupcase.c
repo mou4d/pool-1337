@@ -6,11 +6,9 @@
 /*   By: mbousbaa <mbousbaa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 02:09:01 by mbousbaa          #+#    #+#             */
-/*   Updated: 2022/05/19 02:39:44 by mbousbaa         ###   ########.fr       */
+/*   Updated: 2022/05/22 16:05:27 by mbousbaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 
 char	*ft_strupcase(char *str)
 {
@@ -25,11 +23,3 @@ char	*ft_strupcase(char *str)
 	}
 	return (str);
 }
-/*
-int main()
-{
-	char str[] = "Sabcdefgh";
-	printf("%s", ft_strupcase(str));
-	return 0;
-}
-*/
